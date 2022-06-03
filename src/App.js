@@ -46,7 +46,7 @@ class App extends Component {
           winner: this.state.turn
         })
       } 
-      else if (this.state.boardContents.every(i=> i!='')) {
+      else if (this.state.boardContents.every(i=> i!=='')) {
         this.setState({
           winner: 'No One'
         })
@@ -54,7 +54,7 @@ class App extends Component {
       else {
         
         this.setState({
-          turn: this.state.turn=='X' ? 'O' : 'X'
+          turn: this.state.turn==='X' ? 'O' : 'X'
         })
         
       }
@@ -62,7 +62,7 @@ class App extends Component {
   }
 
   move(box) {
-    if (box.target.textContent == '') {
+    if (box.target.textContent === '') {
 
       let clone = this.state.boardContents
       clone[parseInt(box.target.className)] = this.state.turn
@@ -76,7 +76,7 @@ class App extends Component {
   }
   reset() {
     this.setState({
-      turn: this.state.winner=='X' ? 'O' : 'X',
+      turn: this.state.winner==='X' ? 'O' : 'X',
       boardContents: ['', '', '',
                       '', '', '',
                       '', '', ''],
